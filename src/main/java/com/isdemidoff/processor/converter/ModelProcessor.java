@@ -19,6 +19,14 @@ public class ModelProcessor {
     private final ObjectMapper mapper;
     private final ModelParser parser;
 
+    /**
+     * That's bad method, I could not extract one more subsystem (which should map OutputModel to string)...
+     * <br/>
+     * This method reads all lines from input file and process them as requested.
+     *
+     * @param inputFile    path to the file
+     * @throws IOException If any input problem occurs
+     */
     public void processFile(Path inputFile) throws IOException {
         long lineNumber = 0;
         for (String line : Files.readAllLines(inputFile)) {

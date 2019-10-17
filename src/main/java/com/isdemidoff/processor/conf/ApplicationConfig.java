@@ -1,5 +1,7 @@
 package com.isdemidoff.processor.conf;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.isdemidoff.processor.converter.FileProcessor;
 import com.isdemidoff.processor.converter.ModelProcessor;
@@ -18,7 +20,12 @@ import java.util.stream.Collectors;
 public class ApplicationConfig {
     @Bean
     public ObjectMapper objectMapper() {
-        return new ObjectMapper();
+        return new ObjectMapper()
+                .enable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+                .enable(DeserializationFeature.FAIL_ON_NULL_CREATOR_PROPERTIES)
+                .enable(DeserializationFeature.FAIL_ON_NUMBERS_FOR_ENUMS)
+                .enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS)
+                .disable(DeserializationFeature.ACCEPT_FLOAT_AS_INT);
     }
 
     @Bean

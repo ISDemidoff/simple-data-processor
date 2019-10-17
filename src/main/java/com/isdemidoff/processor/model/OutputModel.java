@@ -6,13 +6,12 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class OutputModel {
-    private final Long orderId;
-    private final Long amount;
+    private final long orderId;
+    private final long amount;
     // Странно, что в формате выходных данных не было этого поля
 //    private final String currency;
     private final String comment;
     private final String filename;
-    private final Long line;
+    private final long line;
     private final String result;
 }
-//{“id”:1, ”amount”:100, ”comment”:”оплата заказа”, ”filename”:”orders.csv”, ”line”:1, ”result”:”OK” }

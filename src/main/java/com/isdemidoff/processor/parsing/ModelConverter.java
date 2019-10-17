@@ -8,7 +8,7 @@ import com.isdemidoff.processor.model.OutputModel;
  */
 public class ModelConverter {
 
-    public static OutputModel convertModel(InputModel model, Long line, String filename) {
+    public static OutputModel convertModel(InputModel model, long line, String filename) {
         return new OutputModel(
                 model.getOrderId(),
                 model.getAmount(),
@@ -19,11 +19,11 @@ public class ModelConverter {
         );
     }
 
-    public static OutputModel errorModel(Long line, String filename, String error) {
+    public static OutputModel errorModel(long line, String filename, String error) {
         return new OutputModel(
-                null,
-                null,
-                null,
+                -1,
+                -1,
+                "",
                 filename,
                 line,
                 error

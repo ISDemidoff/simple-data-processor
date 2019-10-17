@@ -46,7 +46,7 @@ public class CsvModelParser implements ModelParser {
 
         final Currency currency;
         try {
-            currency = Currency.valueOf(strings[2]);
+            currency = Currency.valueOf(strings[2].toUpperCase());
         } catch (IllegalArgumentException e) {
             throw new ParseException("Incorrect currency, should be alphabetic universal code", e);
         }

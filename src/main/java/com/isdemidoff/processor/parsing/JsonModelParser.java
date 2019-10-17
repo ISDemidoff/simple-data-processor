@@ -19,7 +19,7 @@ public class JsonModelParser implements ModelParser {
         try {
             return mapper.readValue(line, InputModel.class);
         } catch (IOException e) {
-            throw new ParseException("Could not read json value from given string", e);
+            throw new ParseException(String.format("Could not read json value from given string: %s", e), e);
         }
     }
 

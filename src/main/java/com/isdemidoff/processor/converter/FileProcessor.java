@@ -27,6 +27,7 @@ public class FileProcessor {
         try {
             resolveDataType(file).processFile(file);
         } catch (IOException e) {
+            // This goes to standard err output!
             e.printStackTrace();
         }
     }
